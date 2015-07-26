@@ -18,6 +18,11 @@ $var = json_decode($send);
 if($var->{type}=='tf'){
     echo $var->{question};
     echo "TF";
+    echo "<form method= \"POST\">";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"True\">";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"True\">";
+    echo "<input type=\"hidden\" value=\"TF\" name=\"Type\">";
+    echo "<input type=\"submit\" value=\"Add To Quiz\">";
 }
 if($var->{type}=='mc'){
     echo $var->{question};
