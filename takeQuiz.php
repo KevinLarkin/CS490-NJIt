@@ -20,9 +20,10 @@ if($var->{type}=='tf'){
     echo "TF";
     echo "<form method= \"POST\">";
     echo "<input type=\"radio\" name=\"Answer\" value=\"True\">";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"True\">";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"False\">";
     echo "<input type=\"hidden\" value=\"TF\" name=\"Type\">";
-    echo "<input type=\"submit\" value=\"Add To Quiz\">";
+    echo "<input type=\"submit\" value=\"Save Answer\">";
+    echo "</form>";
 }
 if($var->{type}=='mc'){
     echo $var->{question};
