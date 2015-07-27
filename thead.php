@@ -14,6 +14,8 @@ p       {color:green}
 a       {color:blue;
              background-color:lightgrey;
 }
+td      {background-color:lightgrey}
+border     {border-color:black}
 
 </style>
     </head>
@@ -52,5 +54,3 @@ href="http://web.njit.edu/~kl293/CS490/Logout.php">LogOut</a>
 		    </div>
 		</div>
 	    </div>
-	    <div class="container">
-

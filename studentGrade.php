@@ -4,23 +4,6 @@
     if(!isset($_SESSION['teacher']))header('Location: index.html');
     include('thead.php');
 ?>
-
-<!--<div class="create-content">
-    <h1>Release Grades</h1>
-    <form class="choice" action="http://web.njit.edu/~kl293/CS490/release.php" method="post">
-                <input type="submit" value="Release Grades">
-    </form>
-</div>
-<div class="create-content">
-
-    <h1>Get Grades</h1>
-    <form class="choice" action="http://web.njit.edu/~kl293/getStudentGrade.php" method="post">
-                <input type="submit" value="Get Grades">
-    </form>
-    <br />
-
-</div>-->
-
     <?php
   $ch = curl_init();
 
@@ -49,7 +32,6 @@
       echo "<td>".$var[$i]->{name}."</td>";
       echo "<td>".$var[$i]->{exam}."</td>";
       echo "<td>".$var[$i]->{score}."</td>";
-      //echo "<td>".$var[$i]->{releaseStatus};
       echo "<td>";
       if($var[$i]->{releaseStatus}==0){
           echo "<form action= \"realeaseGrades.php\" method= \"POST\">";
