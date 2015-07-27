@@ -5,7 +5,8 @@
 	$Opt2 = $_POST['Opt2'];
 	$Opt3 = $_POST['Opt3'];
 	$Opt4 = $_POST['Opt4'];
-        $testMC = "cmd=addMCQuestion&Question=".$Question."&answer=".$Answer."&Opt1=".$Opt1."&Opt2=".$Opt2."&Opt3=".$Opt3."&Opt4=".$Opt4;
+        $diff = $_POST['diff'];
+        $testMC = "cmd=addMCQuestion&Question=".$Question."&answer=".$Answer."&Opt1=".$Opt1."&Opt2=".$Opt2."&Opt3=".$Opt3."&Opt4=".$Opt4."&weight=".$diff;
         //echo $testMC;
 $ch = curl_init();
 

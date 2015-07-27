@@ -1,7 +1,8 @@
 <?php
         $Question = $_POST['Question'];
 	$Answer = $_POST['Answer'];
-        $testOE = "cmd=addOEQuestion&Question=".$Question."&Answer=".$Answer;
+        $diff = $_POST['diff'];
+        $testOE = "cmd=addOEQuestion&Question=".$Question."&Answer=".$Answer."&weight=".$diff;
         //echo $testOE;
         
         $ch = curl_init();
