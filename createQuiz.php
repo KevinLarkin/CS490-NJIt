@@ -31,6 +31,7 @@ for ($i=0; $i< count($questions); $i++){
     echo "<input type=\"checkbox\" name=\"q".$i."\" value=\"".$questions[$i]->{qid}."\" >";
     echo $questions[$i]->{"question"}."<br>";
 }
-?>
-<input name="submit" type="submit" value="Submit">
-</form>
+
+echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
+echo "</form>";
+        ?>
