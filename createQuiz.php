@@ -14,19 +14,19 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
+echo $send;
 //echo count($send);
 $questions= json_decode($send);
-//echo count($questions);
-//echo $questions[0]->{'question'};
-?>
-<form action= "addQuiz.php" method="POST">
-    <br/>
-    Insert Exam Name Here<br/>
-    <input type="text" name="ExamName">
-    <br/>
-    <input type="hidden" name="cmd" value="createExam">
-<?php
+echo count($questions);
+echo $questions[0]->{'message'};
+
+echo  "<form action= \"addQuiz.php\" method=\"POST\">";
+echo  "<br/>";
+echo  "Insert Exam Name Here<br/>";
+echo  "<input type=\"text\" name=\"ExamName\">";
+echo  "<br/>";
+echo  "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
+
 for ($i=0; $i< count($questions); $i++){
     echo "<input type=\"checkbox\" name=\"q".$i."\" value=\"".$questions[$i]->{qid}."\" >";
     echo $questions[$i]->{"question"}."<br>";

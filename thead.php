@@ -17,7 +17,7 @@ a       {color:blue;
 
 </style>
     </head>
-    <body onload="date()">
+    <body>
 	<div id="wrap">
 	    <div class="navbar navbar-default navbar-fixed-top" 
 role="navigation">
