@@ -27,6 +27,23 @@ echo  "<input type=\"text\" name=\"ExamName\">";
 echo  "<br/>";
 echo  "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
 
+echo    "<table border=\"1\">";
+echo    "<tr>";
+echo    "<th>Question ID</th>";
+echo    "<th>Question</th>" ;
+echo    "<th>Weight</th>";
+echo    "<th>Type</th>";
+echo "</tr>";
+    for ($i = 0; $i < count($questions); $i++) {
+      echo "<tr>";
+      echo "<td>".$questions[$i]->{qid}."</td>";
+      echo "<td>".$questions[$i]->{quesion}."</td>";
+      echo "<td>".$questions[$i]->{weight}."</td>";
+      echo "<td>".$questions[$i]->{type}."</td>";
+      echo "</tr>";
+  }
+    echo"</table>";
+
 for ($i=0; $i< count($questions); $i++){
     echo "<input type=\"checkbox\" name=\"q".$i."\" value=\"".$questions[$i]->{qid}."\" >";
     echo $questions[$i]->{"question"}."<br>";
