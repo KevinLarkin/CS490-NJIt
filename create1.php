@@ -25,9 +25,9 @@
                 </label>
                     <input type="text" id="Opt2" name="Opt2" value="False" readonly>&nbsp;
             <br />
-            <input type="radio" name="easy" value="Easy">Easy
-            <input type="radio" name="medium" value="medium">Medium
-            <input type="radio" name="hard" value="hard">Hard
+            <input type="radio" name="diff" value="Easy">Easy
+            <input type="radio" name="diff" value="medium">Medium
+            <input type="radio" name="diff" value="hard">Hard
             <br/>
                 <input type="hidden" value="TF" name="Type">
                 <input type="submit" value="Add To Quiz">
@@ -67,9 +67,9 @@
     <input type="radio" name="answer" value="D"></label>
 <input tupe="text" id="Opt4" name="Opt4">
 <br />
-<input type="radio" name="easy" value="Easy">Easy
-            <input type="radio" name="medium" value="medium">Medium
-            <input type="radio" name="hard" value="hard">Hard
+            <input type="radio" name="diff" value="Easy">Easy
+            <input type="radio" name="diff" value="medium">Medium
+            <input type="radio" name="diff" value="hard">Hard
             <br/>
 <input type="hidden" value="MC" name="Type">
 <input type="submit" value="Add To Quiz">
@@ -88,9 +88,9 @@
  <b>Please type the Answer here</b>
  <br />		
  <textarea id="OEA" name="Answer" style="width:400px; min-height: 100px; max-height: none;"></textarea>
- <br /><input type="radio" name="easy" value="Easy">Easy
-            <input type="radio" name="medium" value="medium">Medium
-            <input type="radio" name="hard" value="hard">Hard
+ <br /><input type="radio" name="diff" value="Easy">Easy
+            <input type="radio" name="diff" value="medium">Medium
+            <input type="radio" name="diff" value="hard">Hard
             <br/>
     <input type="hidden" value="OE" name="Type">
     <input type="submit" value="Add To Quiz">
