@@ -19,7 +19,7 @@
   
   ?>
 
-<table border="1">
+<p><table border="1">
   <tr>
     <td>Name</td>
     <td>Exam</td> 
@@ -46,4 +46,4 @@
       echo "</td></tr>";
   }
   ?>
-</table>
+</table></p>

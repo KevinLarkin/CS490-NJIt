@@ -15,7 +15,7 @@ a       {color:blue;
              background-color:lightgrey;
 }
 td      {background-color:lightgrey}
-border     {border-color:black}
+table     {border-color:black}
 
 </style>
     </head>

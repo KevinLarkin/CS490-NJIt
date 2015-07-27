@@ -47,25 +47,25 @@
 <br />
 <label style="cursor:pointer;">
     <input type="radio" name="answer" value="A"></label>
-<input tupe="text" id="Opt1" name="Opt1">
+<input type="text" id="Opt1" name="Opt1">
 <br />
 <b>Please create second answer here</b>
 <br />
 <label style="cursor:pointer;">
     <input type="radio" name="answer" value="B"></label>
-<input tupe="text" id="Opt2" name="Opt2">
+<input type="text" id="Opt2" name="Opt2">
 <br />
 <b>Please create third answer here</b>
 <br />
 <label style="cursor:pointer;">
     <input type="radio" name="answer" value="C"></label>
-<input tupe="text" id="Opt3" name="Opt3">
+<input type="text" id="Opt3" name="Opt3">
 <br />
 <b>Please create fourth answer here</b>
 <br />
 <label style="cursor:pointer;">
     <input type="radio" name="answer" value="D"></label>
-<input tupe="text" id="Opt4" name="Opt4">
+<input type="text" id="Opt4" name="Opt4">
 <br />
             <input type="radio" name="diff" value="Easy">Easy
             <input type="radio" name="diff" value="medium">Medium
