@@ -10,9 +10,15 @@ session_start();
             li{
                 display: inline;
             }
-            body    {background-color:#33ff00}
+            body    {background-color:#00FF99}
             h1      {color:red}
             p       {color:green}
+            td,th      {background-color:#FFCC66}
+table,th,td    {
+    border:1px solid black;
+    border-collapse: collapse;}
+th,td{padding: 10px;}
+            
         </style>
     </head>
     <body>

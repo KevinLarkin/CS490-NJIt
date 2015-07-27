@@ -19,12 +19,12 @@
   
   ?>
 
-<p><table border="1">
+<center><table border="1">
   <tr>
-    <td>Name</td>
-    <td>Exam</td> 
-    <td>Score</td>
-    <td>Release Grades</td>
+    <th>Name</th>
+    <th>Exam</th> 
+    <th>Score</th>
+    <th>Release Grades</th>
   </tr>
   <?php
     for ($i = 0; $i < count($var); $i++) {
@@ -46,4 +46,4 @@
       echo "</td></tr>";
   }
   ?>
-</table></p>
+    </table></center>

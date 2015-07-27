@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-	<title>Online Quiz</title>
+	<title>Grades</title>
         <style> 
             li{
             display: inline;
@@ -14,11 +14,14 @@ p       {color:green}
 a       {color:blue;
              background-color:lightgrey;
 }
-td      {background-color:lightgrey}
-table     {border-color:black}
+td,th      {background-color:lightgrey}
+table,th,td    {
+    border:1px solid black;
+    border-collapse: collapse;}
+th,td{padding: 15px;}
 
 </style>
-    </head>
+        </head>
     <body>
 	<div id="wrap">
 	    <div class="navbar navbar-default navbar-fixed-top" 

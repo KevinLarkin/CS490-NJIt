@@ -16,12 +16,12 @@ $send=curl_exec($ch);
 
 $var = json_decode($send);
 ?>
-<h1>Select Quiz</h1>
+<center><h1>Select Quiz</h1>
            
 <table border="1">
   <tr>
-    <td>Quiz Name</td>
-    <td>Take Exam</td>
+      <th>Quiz Name</th>
+    <th>Take Exam</th>
   </tr>
   <?php
     for ($i = 0; $i < count($var); $i++) {
@@ -42,4 +42,4 @@ $var = json_decode($send);
       echo "</td></tr>";
   }
   ?>
-</table>
+</table></center>
