@@ -5,7 +5,7 @@
     include('studentHeader.php');
 ?>
         <div class="alert alert-success">
-		    <b>Welcome Student!</b>
+		    <h1>Welcome Student!</h1>
 	</div>
     </div>
 

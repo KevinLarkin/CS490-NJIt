@@ -12,7 +12,7 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=getScores&username=".$_SESSION[$user]);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-echo $send;
+//echo $send;
 
 $var = json_decode($send);
 //echo $var;

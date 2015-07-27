@@ -22,6 +22,7 @@ $questions= json_decode($send);
 ?>
 <form action= "addQuiz.php" method="POST">
     <br/>
+    Insert Exam Name Here<br/>
     <input type="text" name="ExamName">
     <br/>
     <input type="hidden" name="cmd" value="createExam">

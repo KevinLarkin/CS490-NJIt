@@ -5,7 +5,7 @@
     include('thead.php');
 ?>
         <div class="alert alert-success">
-		    <b>Welcome Professor!</b>
+		    <h2>Welcome Professor!</h2>
 	</div>
     </div>
 

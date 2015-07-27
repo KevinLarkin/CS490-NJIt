@@ -4,9 +4,8 @@
     if(!isset($_SESSION['teacher']))header('Location: index.html');
     include('thead.php');
 ?>
-<div class="content-create" id="TF">
-<h3> True or False</h3>
-<br />
+<center><div class="content-create" id="TF">
+<h1> True or False</h1>
 <form action="addQuesTF.php" name="myform" method="POST">
     <b> Please type your question in the test box below</b>
     <br />
@@ -26,13 +25,19 @@
                 </label>
                     <input type="text" id="Opt2" name="Opt2" value="False" readonly>&nbsp;
             <br />
+            <input type="radio" name="easy" value="Easy">Easy
+            <input type="radio" name="medium" value="medium">Medium
+            <input type="radio" name="hard" value="hard">Hard
+            <br/>
                 <input type="hidden" value="TF" name="Type">
                 <input type="submit" value="Add To Quiz">
 </form>
 <br/>
 </div>
+    
+    
 <div class="content-create" id="MC">
-<h3> Multiple Choice</h3>
+<h1> Multiple Choice</h1>
 <form action="addQuesMC.php" name="question" method="POST">
     <b> Please insert new Question here</b>
     <br />
@@ -62,13 +67,19 @@
     <input type="radio" name="answer" value="D"></label>
 <input tupe="text" id="Opt4" name="Opt4">
 <br />
+<input type="radio" name="easy" value="Easy">Easy
+            <input type="radio" name="medium" value="medium">Medium
+            <input type="radio" name="hard" value="hard">Hard
+            <br/>
 <input type="hidden" value="MC" name="Type">
 <input type="submit" value="Add To Quiz">
 </form>
 <br/>
 </div>
 <div class="content-create" id="TF">
-<h3>Open Ended</h3>
+    
+    
+<h1>Open Ended</h1>
 <form action="addQuesOE.php" name="question" method="POST">
 <b>Please type your Question here</b>
 <br/>
@@ -77,7 +88,11 @@
  <b>Please type the Answer here</b>
  <br />		
  <textarea id="OEA" name="Answer" style="width:400px; min-height: 100px; max-height: none;"></textarea>
- <br />
+ <br /><input type="radio" name="easy" value="Easy">Easy
+            <input type="radio" name="medium" value="medium">Medium
+            <input type="radio" name="hard" value="hard">Hard
+            <br/>
     <input type="hidden" value="OE" name="Type">
     <input type="submit" value="Add To Quiz">
-</form></div>
+    
+</form></div></center>

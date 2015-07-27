@@ -11,7 +11,7 @@
 <body>
 
 <style>
-body    {background-color:skyblue}
+    body    {background-color:#33ffff}
 h1      {color:red}
 p       {color:green}
 </style>
