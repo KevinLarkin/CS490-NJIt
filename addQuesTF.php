@@ -2,7 +2,7 @@
         $Question = $_POST['Question'];
 	$Answer = $_POST['Answer'];
         $diff = $_POST['diff'];
-        $test = "cmd=addTFQuestion&Question=".$Question."&Answer=".$Answer."&diff=".$diff;
+        $test = "cmd=addTFQuestion&Question=".$Question."&Answer=".$Answer."&wait=".$diff;
         //echo $test;
 $ch = curl_init();
 
