@@ -18,7 +18,7 @@ echo $send;
 //echo count($send);
 $questions= json_decode($send);
 echo count($questions);
-echo $questions[0]->{'message'};
+echo $questions->{'message'};
 
 echo  "<form action= \"addQuiz.php\" method=\"POST\">";
 echo  "<br/>";
