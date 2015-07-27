@@ -14,12 +14,12 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
+echo $send;
 //echo count($send);
 $questions= json_decode($send);
 //echo count($questions);
 //echo $questions->{'message'};
-if(count($questions)==0){
+if(count($questions)>0){
 echo  "<form action= \"addQuiz.php\" method=\"POST\">";
 echo  "<br/>";
 echo  "Insert Exam Name Here<br/>";
