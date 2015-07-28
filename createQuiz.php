@@ -12,13 +12,12 @@ th,td {padding:5px;}
 
 $dataString = 'cmd=newExam';
 $ch = curl_init();
-
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
+echo $send;
 //echo count($send);
 $questions= json_decode($send);
 //echo count($questions);
@@ -30,7 +29,7 @@ echo  "Insert Exam Name Here<br/>";
 echo  "<input type=\"text\" name=\"ExamName\">";
 echo  "<br/>";
 echo  "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
-echo    "<table border=\"1\ class=\"inlineTable\" style=\"float:left\">";
+echo    "<table border=\"1\ class=\"inlineTable\" <!--style=\"float:left-->\">";
 echo    "<tr>";
 echo    "<th>Selcct Question</th>";
 echo    "<th>Question</th>" ;
@@ -45,14 +44,14 @@ echo "</tr>";
       echo "<td>".$questions[$i]->{type}."</td>";
       echo "</tr>";
   }
-  echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:left\>";
+  //echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:left\>";
     echo"</table>";
-//echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:left\>";
+echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
 echo "</form>";}else{
     echo "There are no Questions to make a Quiz";
 }
 
-if(count($questions)>0){
+/*if(count($questions)>0){
 echo  "<form action= \"addQuiz.php\" method=\"POST\">";
 //echo  "<br/>";
 //echo  "Insert Exam Name Here<br/>";
@@ -75,5 +74,5 @@ echo "</tr>";
 //echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:right\">";
 echo "</form>";}else{
     echo "There are no Questions to make a test";
-}
+}*/
         ?>
