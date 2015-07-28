@@ -14,7 +14,7 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
+echo $send;
 //echo "this is working";
 
 $var = json_decode($send);
