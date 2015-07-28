@@ -45,35 +45,41 @@ echo "</tr>";
       echo "<td>".$questions[$i]->{type}."</td>";
       echo "</tr>";
   }
-  //echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:left\>";
     echo"</table>";
 echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
 echo "</form>";}else{
     echo "There are no Questions to make a Quiz";
 }
 
-/*if(count($questions)>0){
-echo  "<form action= \"addQuiz.php\" method=\"POST\">";
-//echo  "<br/>";
-//echo  "Insert Exam Name Here<br/>";
-//echo  "<input type=\"text\" name=\"ExamName\">";
-//echo  "<br/>";
+$dataString = 'cmd=newExam';
+$ch = curl_init();
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
+curl_setopt($ch,CURLOPT_POST,true);
+curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$send=curl_exec($ch);
+$tests= json_decode($send);
+
+if(count($test)>0){
+echo  "<form <!--action= \"addQuiz.php\"--> method=\"POST\">";
+echo  "<br/>";
+echo  "Pick a Test<br/>";
 echo  "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
-echo    "<table border=\"1\ class=\"inlineTable\" style=\"float:right\">";
+echo    "<table border=\"1\ class=\"inlineTable\">";
 echo    "<tr>";
 echo    "<th>Selcct Test</th>";
 echo    "<th>Test</th>" ;
 echo "</tr>";
-    for ($i = 0; $i < count($questions); $i++) {
+    for ($i = 0; $i < count($test); $i++) {
       echo "<tr>";
-      echo "<td><input type=\"checkbox\" name=\"q".$i."\" value=\"".$questions[$i]->{qid}."\" ></td>";
+      echo "<td><input type=\"checkbox\" name=\"q".$i."\" value=\"".$test[$i]->{qid}."\" ></td>";
       echo "<td>".$questions[$i]->{"test"}."<br></td>";
       echo "</tr>";
   }
-  echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:right\">";
+  //echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" >";
     echo"</table>";
-//echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:right\">";
+echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" >";
 echo "</form>";}else{
     echo "There are no Questions to make a test";
-}*/
+}
         ?>
