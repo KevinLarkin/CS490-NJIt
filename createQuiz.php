@@ -17,7 +17,7 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-echo $send;
+//echo $send;
 //echo count($send);
 $questions= json_decode($send);
 //echo count($questions);
@@ -38,7 +38,8 @@ echo    "<th>Type</th>";
 echo "</tr>";
     for ($i = 0; $i < count($questions); $i++) {
       echo "<tr>";
-      echo "<td><input type=\"checkbox\" name=\"q".$i."\" value=\"".$questions[$i]->{qid}."\" ></td>";
+      //echo "<td><input type=\"checkbox\" name=\"q".$i."\" value=\"".$questions[$i]->{qid}."\" ></td>";
+      echo "<td><input type=\"checkbox\" name=\"qid[]\" value=\"".$questions[$i]->{qid}."\" ></td>";
       echo "<td>".$questions[$i]->{"question"}."<br></td>";
       echo "<td>".$questions[$i]->{weight}."</td>";
       echo "<td>".$questions[$i]->{type}."</td>";
