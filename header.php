@@ -2,8 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
 	<title>CS490</title>
-	<link href="css/bootstrap.css" rel="stylesheet"/>
-	<link href="css/mainstyle.css" rel="stylesheet"/>
         <style> 
             li{
             display: inline;
@@ -20,6 +18,9 @@
 			    </li>
 			    <li>
                                 <a href="Logout.php">Logout</a>
+			    </li>
+                            <li>
+                                <a href="forgotpass.php">Forgot Password</a>
 			    </li>
 			</ul>
 		    </div>
