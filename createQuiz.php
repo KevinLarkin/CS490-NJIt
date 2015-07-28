@@ -70,8 +70,9 @@ echo "</tr>";
       echo "<td>".$questions[$i]->{"test"}."<br></td>";
       echo "</tr>";
   }
+  echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:right\">";
     echo"</table>";
-echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:right\">";
+//echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" style=\"float:right\">";
 echo "</form>";}else{
     echo "There are no Questions to make a test";
 }
