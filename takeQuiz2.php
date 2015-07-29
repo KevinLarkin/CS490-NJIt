@@ -22,7 +22,7 @@ $var = json_decode($send);
 //echo $var->{question};
 //echo $_SESSION['userId'];
 
-if($_POST['cmd']=="checkAnswer"){
+/*if($_POST['cmd']=="checkAnswer"){
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 //curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
@@ -30,7 +30,7 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $checkAnswerO=curl_exec($ch);
 echo $checkAnswerO;
-}
+}*/
 
 if($var->{type}=='tf'){
     echo $var->{question};
@@ -60,6 +60,7 @@ if($var->{type}=='mc'){
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["userId"]."\" name=\"userId\">";
+    echo "<input type=\"hidden\" value=\"".$_GET["examName"]."\" name=\"examName\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }
@@ -73,6 +74,7 @@ if($var->{type}=='oe'){
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["userId"]."\" name=\"userId\">";
+    echo "<input type=\"hidden\" value=\"".$_GET["examName"]."\" name=\"examName\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }

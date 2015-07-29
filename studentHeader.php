@@ -15,7 +15,10 @@ table,th,td    {
     border:1px solid black;
     border-collapse: collapse;}
 th,td{padding: 10px;}
-            
+td,th      {background-color:lightgrey}
+table,th,td    {
+    border:1px solid black;
+    border-collapse: collapse;}
         </style>
     </head>
     <body>

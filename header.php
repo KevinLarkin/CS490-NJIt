@@ -6,7 +6,7 @@
             li{
             display: inline;
             }
-    body    {background-color:#33ffff}
+body    {background-color:#33ffff}
 h1      {color:red}
 p       {color:green}
 
