@@ -98,7 +98,8 @@ if($_POST['cmd']=='checkAnswer'){
 ?>
 <form action="finalSubmit.php" method="POST">
    <input type="hidden" value="<?php echo $_GET['examName'];?>" name="examName">
-   <input type="hidden" value="<?php echo $_SESSION["user"];?> " name=user>
+   <input type="hidden" value="<?php echo $_SESSION["user"];?> " name="user">
+   <input type="hidden" value="<?php echo $_SESSION["userId"];?> " name="userId">
    <input type="hidden" value="submitExam" name="cmd">
    <input type="submit" value="Submit Quiz">
 </form>
