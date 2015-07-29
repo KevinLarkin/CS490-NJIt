@@ -42,7 +42,7 @@ if($var->{type}=='tf'){
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
-    echo "<input type=\"hidden\" value=\"".$_SESSION["userID"]."\" name=\"user\">";
+    echo "<input type=\"hidden\" value=\"".$_SESSION["userId"]."\" name=\"userId\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }
@@ -58,6 +58,7 @@ if($var->{type}=='mc'){
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
+    echo "<input type=\"hidden\" value=\"".$_SESSION["userId"]."\" name=\"userId\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }
@@ -70,6 +71,7 @@ if($var->{type}=='oe'){
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
+    echo "<input type=\"hidden\" value=\"".$_SESSION["userId"]."\" name=\"userId\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }
