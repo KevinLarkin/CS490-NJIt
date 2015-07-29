@@ -1,5 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+session_start();
+include('header.php');
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 	<title>Grades</title>
@@ -7,12 +11,9 @@
             li{
             display: inline;
             }
-body    {background-color:#FFCC00}
-h1      {color:red}
-h2      {color:blue}
 p       {color:green}
-a       {color:blue;
-             background-color:lightgrey;
+a       {color:red;
+             background-color:white;
 }
 td,th      {background-color:lightgrey}
 table,th,td    {

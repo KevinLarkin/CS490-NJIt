@@ -10,12 +10,6 @@
 <title>CS490</title>
 <body>
 
-<style>
-    body    {background-color:#33ffff}
-h1      {color:red}
-p       {color:green}
-
-</style>
 <script src="java.js"></script>
 <center><h1>WELCOME</h1>
 <p>This is the last website you will EVER log into</p>

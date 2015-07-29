@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('header.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,10 +11,6 @@ session_start();
             li{
                 display: inline;
             }
-            body    {background-color:#00FF99}
-            h1      {color:red}
-            p       {color:green}
-            td,th      {background-color:#FFCC66}
 table,th,td    {
     border:1px solid black;
     border-collapse: collapse;}

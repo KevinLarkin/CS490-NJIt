@@ -6,7 +6,11 @@
             li{
             display: inline;
             }
-        </style>
+    body    {background-color:#33ffff}
+h1      {color:red}
+p       {color:green}
+
+</style>
     </head>
     <body>
 	<div id="wrap">

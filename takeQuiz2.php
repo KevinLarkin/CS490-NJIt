@@ -21,6 +21,18 @@ $var = json_decode($send);
 //echo count($var);
 //echo $var->{question};
 //echo $_SESSION['userId'];
+
+if($_POST['cmd']=="checkAnswer"){
+     $ch = curl_init();
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
+curl_setopt($ch,CURLOPT_POST,true);
+//curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
+curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
+curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+$checkAnswerO=curl_exec($ch);
+echo $checkAnswerO;
+}
+
 if($var->{type}=='tf'){
     echo $var->{question};
     //echo "TF";
