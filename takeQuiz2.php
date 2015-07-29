@@ -14,7 +14,7 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userid=".$_SESSION['userId']);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-echo $send;
+//echo $send;
 //echo "this is working";
 
 $var = json_decode($send);
@@ -38,10 +38,10 @@ if($var->{type}=='mc'){
     echo $var->{question};
     //echo "MC";
     echo "<form method= \"POST\">";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"A\">".$var->{Opt1}."<br>";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"B\">".$var->{Opt2}."<br>";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"C\">".$var->{Opt3}."<br>";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"D\">".$var->{Opt4}."<br>";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"A\">".$var->{Opt0}."<br>";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"B\">".$var->{Opt1}."<br>";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"C\">".$var->{Opt2}."<br>";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"D\">".$var->{Opt3}."<br>";
     echo "<input type=\"hidden\" value=\"MC\" name=\"Type\">";
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
@@ -62,10 +62,10 @@ if($var->{type}=='oe'){
     echo "</form>";
 }
 if($var->{previous}!=NULL){
-    echo "<a href=\"takeQuiz.php?examName=".$_GET["examName"]."&qid=".$var->{previous}."\"> previous </a>";
+    echo "<a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{previous}."\"> previous </a>";
 }
 if($var->{next}!=NULL){
-    echo "<a href=\"takeQuiz.php?examName=".$_GET["examName"]."&qid=".$var->{next}."\"> next </a>";
+    echo "<a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{next}."\"> next </a>";
 }
 if($_POST['cmd']=='checkAnswer'){
     //echo $_POST['Answer'];
