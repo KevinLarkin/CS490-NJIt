@@ -20,7 +20,7 @@ echo $send;
 $var = json_decode($send);
 //echo count($var);
 //echo $var->{question};
-echo $_SESSION['userId'];
+//echo $_SESSION['userId'];
 if($var->{type}=='tf'){
     echo $var->{question};
     //echo "TF";
