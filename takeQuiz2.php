@@ -99,8 +99,13 @@ if($var->{type}=='oe'){
     echo $var->{question};
     //echo "OE";
     echo "<form method= \"POST\">";
-    echo "<input type=\"text\" name=\"Answer\">";
-    echo "<input type=\"hidden\" value=\"TF\" name=\"Type\">";
+    if($var->{userAnswer}!=''){
+        echo "<input type=\"text\" name=\"Answer\" value=\"".$var->{'userAnswer'}."\"><br>";
+    }else{
+        echo "<input type=\"text\" name=\"Answer\">";
+    }
+    //echo "<input type=\"text\" name=\"Answer\">";
+    echo "<input type=\"hidden\" value=\"OE\" name=\"Type\">";
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
@@ -123,7 +128,7 @@ if($_POST['cmd']=='checkAnswer'){
     curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $send = curl_exec($ch);
-    //echo $send;
+    echo $send;
 }
 
 ?>
