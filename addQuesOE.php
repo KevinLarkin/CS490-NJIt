@@ -12,6 +12,15 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$testOE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-echo $send;
+//echo $send;
+
+$var = json_decode($send);
+//echo $var->{'message'};
+
+if($var->{'message'}=='ok'){
+    header('Location: create1.php');
+}else{
+    echo "Contact admin for more help";
+}
         ?>
 
