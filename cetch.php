@@ -9,12 +9,13 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=auth&username=".$username."&password=".$password);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-
+echo $send;
 $var = json_decode($send);
-//echo $send;
+//echo $var;
 
 if($var->{'login'}=="ok"){
     $_SESSION["user"]=$username;
+    $_SESSION['userId']=$var->{'userId'};
     if($var->{'type'}=="instructor"){
         //echo 'teacher';
         $_SESSION["teacher"]='true';

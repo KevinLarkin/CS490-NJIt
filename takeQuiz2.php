@@ -11,7 +11,7 @@ $testing = "cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["us
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 //curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
-curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]);
+curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userif=".$_SESSION['userId']);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 echo $send;
@@ -20,7 +20,7 @@ echo $send;
 $var = json_decode($send);
 //echo count($var);
 //echo $var->{question};
-
+echo $_SESSION['userId'];
 if($var->{type}=='tf'){
     echo $var->{question};
     //echo "TF";
