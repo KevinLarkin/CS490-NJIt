@@ -22,7 +22,8 @@ $send=curl_exec($ch);
 $questions= json_decode($send);
 //echo count($questions);
 //echo $questions->{'message'};
-echo $questions->{type};
+//echo $questions;
+//echo $questions->{type};
 if(count($questions)>0){
 echo  "<form action= \"addQuiz.php\" method=\"POST\">";
 echo  "<br/>";
@@ -51,7 +52,7 @@ echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
 echo "</form>";}else{
     echo "There are no Questions to make a Quiz";
 }
-
+/*
 $dataString = 'cmd=newExam';
 $ch = curl_init();
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
@@ -81,6 +82,6 @@ echo "</tr>";
     echo"</table>";
 echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" >";
 echo "</form>";}else{
-    echo "There are no Questions to make a test";
-}
+    echo "There are no Tests";
+}*/
         ?>

@@ -4,7 +4,7 @@ $qid=array();
 for($i=0; $i<count($_POST['qid']);$i++){
     $post['q'.$i]=$_POST['qid'][$i];
 }
-echo count($qid);
+//echo count($qid);
 $post['ExamName']=$_POST['ExamName'];
 $post['cmd']=$_POST['cmd'];
 $post['qid']=$qid;
