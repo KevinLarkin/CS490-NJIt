@@ -43,6 +43,7 @@ if($var->{type}=='tf'){
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["userId"]."\" name=\"userId\">";
+    echo "<input type=\"hidden\" value=\"".$_GET["examName"]."\" name=\"examName\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }
