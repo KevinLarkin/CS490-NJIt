@@ -52,7 +52,7 @@ echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
 echo "</form>";}else{
     echo "There are no Questions to make a Quiz";
 }
-/*
+
 $dataString = 'cmd=newExam';
 $ch = curl_init();
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
@@ -83,5 +83,5 @@ echo "</tr>";
 echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" >";
 echo "</form>";}else{
     echo "There are no Tests";
-}*/
+}
         ?>

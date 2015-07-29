@@ -30,7 +30,7 @@ $var = json_decode($send);
       echo "<td>";
       if($var[$i]->{testingStatus}==0){
           //echo "<form action= \"takeQuiz.php\" method= \"POST\">";
-          echo "<form action= \"takeQuiz.php\" method= \"GET\">";
+          echo "<form action= \"takeQuiz2.php\" method= \"GET\">";
           echo "<input type=\"hidden\" name=\"examName\" value=\"".$var[$i]->{exam}."\">";
           echo "<input type=\"hidden\" name=\"cmd\" value=\"takeExam\">";
           //echo "<input type=\"hidden\" name=\"username\" value=\"".$_SESSION["user"]."\">";

@@ -26,6 +26,8 @@ if($var->{'login'}=="ok"){
         header('Location: https://web.njit.edu/~kl293/CS490/student.php');
     }
  }else{
-        echo "Fail";
+        //header('Location: https://web.njit.edu/~kl293/CS490/index.php');
+        //echo "Fail login please try again";
+     echo "alert(\"Fail login\")";
 }
 ?>

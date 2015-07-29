@@ -14,8 +14,9 @@
     body    {background-color:#33ffff}
 h1      {color:red}
 p       {color:green}
-</style>
 
+</style>
+<script src="java.js"></script>
 <center><h1>WELCOME</h1>
 <p>This is the last website you will EVER log into</p>
 
@@ -29,7 +30,7 @@ Password:<br>
 <input type="password" name="password">
 <br><br>
 
-<input name="submit" type="submit" value="Submit">
+<input name="submit" onclick="myFunction()"  type="submit" value="Submit">
 </form>
 <p id ="output"></p>
 </center>
