@@ -13,8 +13,8 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=getExams&userId=".$_SESSION['userId']);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 echo $send;
-$test = "cmd=getExams&userId=".$SESSION['userId'];
-echo $test;
+//$test = "cmd=getExams&userId=".$SESSION['userId'];
+//echo $test;
 $var = json_decode($send);
 ?>
 <center><h1>Select Quiz</h1>
