@@ -13,5 +13,13 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send = curl_exec($ch);
 echo $send;
+
+$var=  json_decode($send);
+
+if($var->{'submit'}=='ok'){
+    header('Location: quizList.php');
+}else{
+    echo "Contact admin for more help";
+}
 ?>
 
