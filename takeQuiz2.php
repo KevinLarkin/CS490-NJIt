@@ -11,10 +11,10 @@ $testing = "cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["us
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 //curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
-curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userid=".$_SESSION['userId']);
+curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userid=".$_SESSION['userId']."&userAnswer=".$userAnswer);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
+echo $send;
 //echo "this is working";
 
 $var = json_decode($send);
@@ -34,10 +34,20 @@ echo $checkAnswerO;
 
 if($var->{type}=='tf'){
     echo $var->{question};
-    //echo "TF";
+    //echo "TF";   
     echo "<form method= \"POST\">";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"True\">True<br>";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"False\">False<br>";
+    if($var->{userAnswer}=='True'){
+        echo "<input type=\"radio\" name=\"Answer\" value=\"True\" checked=\"checked\">True<br>";
+    }else{
+        echo "<input type=\"radio\" name=\"Answer\" value=\"True\">True<br>";
+    }
+    if($var->{userAnswer}=='False'){
+        echo "<input type=\"radio\" name=\"Answer\" value=\"False\" checked=\"checked\">False<br>";
+    }else{
+        echo "<input type=\"radio\" name=\"Answer\" value=\"Flase\">False<br>";
+    }
+    /*echo "<input type=\"radio\" name=\"Answer\" value=\"True\">True<br>";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"False\">False<br>";*/
     echo "<input type=\"hidden\" value=\"TF\" name=\"Type\">";
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
@@ -51,10 +61,31 @@ if($var->{type}=='mc'){
     echo $var->{question};
     //echo "MC";
     echo "<form method= \"POST\">";
+    if($var->{userAnswer}=='A'){
+        echo "<input type=\"radio\" name=\"Answer\" value=\"A\" checked=\"checked\">".$var->{Opt0}."<br>";
+    }else{
+        echo "<input type=\"radio\" name=\"Answer\" value=\"A\">".$var->{Opt0}."<br>";
+    }
+    if($var->{userAnswer}=='B'){
+        echo "<input type=\"radio\" name=\"Answer\" value=\"B\" checked=\"checked\">".$var->{Opt1}."<br>";
+    }else{
+        echo "<input type=\"radio\" name=\"Answer\" value=\"B\">".$var->{Opt1}."<br>";
+    }
+    if($var->{userAnswer}=='C'){
+        echo "<input type=\"radio\" name=\"Answer\" value=\"C\" checked=\"checked\">".$var->{Opt2}."<br>";
+    }else{
+        echo "<input type=\"radio\" name=\"Answer\" value=\"C\">".$var->{Opt2}."<br>";
+    }
+    if($var->{userAnswer}=='D'){
+        echo "<input type=\"radio\" name=\"Answer\" value=\"D\" checked=\"checked\">".$var->{Opt3}."<br>";
+    }else{
+        echo "<input type=\"radio\" name=\"Answer\" value=\"D\">".$var->{Opt3}."<br>";
+    }
+    /*
     echo "<input type=\"radio\" name=\"Answer\" value=\"A\">".$var->{Opt0}."<br>";
     echo "<input type=\"radio\" name=\"Answer\" value=\"B\">".$var->{Opt1}."<br>";
     echo "<input type=\"radio\" name=\"Answer\" value=\"C\">".$var->{Opt2}."<br>";
-    echo "<input type=\"radio\" name=\"Answer\" value=\"D\">".$var->{Opt3}."<br>";
+    echo "<input type=\"radio\" name=\"Answer\" value=\"D\">".$var->{Opt3}."<br>";*/
     echo "<input type=\"hidden\" value=\"MC\" name=\"Type\">";
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
