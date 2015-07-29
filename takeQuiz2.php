@@ -23,7 +23,6 @@ $var = json_decode($send);
 //echo $_SESSION['userId'];
 
 if($_POST['cmd']=="checkAnswer"){
-     $ch = curl_init();
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 //curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
@@ -43,6 +42,7 @@ if($var->{type}=='tf'){
     echo "<input type=\"hidden\" value=\"checkAnswer\" name=\"cmd\">";
     echo "<input type=\"hidden\" value=\"".$var->{current}."\" name=\"current\">";
     echo "<input type=\"hidden\" value=\"".$_SESSION["user"]."\" name=\"user\">";
+    echo "<input type=\"hidden\" value=\"".$_SESSION["userID"]."\" name=\"user\">";
     echo "<input type=\"submit\" value=\"Save Answer\">";
     echo "</form>";
 }
