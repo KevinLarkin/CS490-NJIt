@@ -31,23 +31,23 @@ role="navigation">
                 <center><div class="container">
 			    <li class="active">
 				<a 
-href="http://web.njit.edu/~kl293/CS490/teacher.php">Teacher</a>
+href="teacher.php">Teacher</a>
 			    </li>
                             <li>
                                 <a 
-href="http://web.njit.edu/~kl293/CS490/create1.php">Create Quiz Questions</a>
+href="create1.php">Create Quiz Questions</a>
                             </li>
                             <li>
                                 <a 
-href="http://web.njit.edu/~kl293/CS490/createQuiz.php">Make Quiz</a>
+href="createQuiz.php">Make Quiz</a>
                             </li>
 			    <li>
 				<a 
-href="http://web.njit.edu/~kl293/CS490/studentGrade.php">Grades</a>
+href="studentGrade.php">Grades</a>
 			    </li>
 			    <li>
 				<a 
-href="http://web.njit.edu/~kl293/CS490/Logout.php">LogOut</a>
+href="Logout.php">LogOut</a>
 			    </li>
 			</ul>
                     </div></center>

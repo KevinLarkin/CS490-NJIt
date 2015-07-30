@@ -29,19 +29,19 @@ table,th,td    {
                         <ul class="nav navbar-nav">
                             <li class="active">
                                 <a 
-                                    href="http://web.njit.edu/~kl293/CS490/student.php">Student</a>
+                                    href="student.php">Student</a>
                             </li>
                             <li>
                                 <a 
-                                    href="http://web.njit.edu/~kl293/CS490/quizList.php">Take Quiz</a>
+                                    href="quizList.php">Take Quiz</a>
                             </li>
                             <li>
                                 <a 
-                                    href="http://web.njit.edu/~kl293/CS490/getStudentGrade.php">Grade</a>
+                                    href="getStudentGrade.php">Grade</a>
                             </li>
                             <li>
                                 <a 
-                                    href="http://web.njit.edu/~kl293/CS490/Logout.php">LogOut</a>
+                                    href="Logout.php">LogOut</a>
                             </li>
                         </ul>
                     </div>

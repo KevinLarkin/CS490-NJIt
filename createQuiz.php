@@ -1,7 +1,7 @@
 <?php
  ob_start();
     session_start();
-    if(!isset($_SESSION['teacher']))header('Location: index.html');
+    if(!isset($_SESSION['teacher']))header("Location: index.php");
     include('thead.php');
 ?>
 <style>
@@ -12,7 +12,7 @@ th,td {padding:5px;}
 
 $dataString = 'cmd=newExam';
 $ch = curl_init();
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -55,7 +55,7 @@ echo "</form></center>";}else{
 
 $dataString = 'cmd=newExam';
 $ch = curl_init();
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
