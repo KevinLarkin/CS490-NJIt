@@ -25,7 +25,7 @@ $questions= json_decode($send);
 //echo $questions;
 //echo $questions->{type};
 if(count($questions)>0){
-echo  "<form action= \"addQuiz.php\" method=\"POST\">";
+echo  "<center><form action= \"addQuiz.php\" method=\"POST\">";
 echo  "<br/>";
 echo  "Insert Exam Name Here<br/>";
 echo  "<input type=\"text\" name=\"ExamName\">";
@@ -49,7 +49,7 @@ echo "</tr>";
   }
     echo"</table>";
 echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
-echo "</form>";}else{
+echo "</form></center>";}else{
     echo "There are no Questions to make a Quiz";
 }
 
@@ -61,7 +61,7 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 $tests= json_decode($send);
-
+//Needs to be worked on
 if(count($test)){
 echo  "<form <!--action= \"addQuiz.php\"--> method=\"POST\">";
 echo  "<br/>";

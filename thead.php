@@ -12,8 +12,9 @@ include('header.php');
             display: inline;
             }
 p       {color:green}
-a       {color:red;
+a       {color:black;
              background-color:white;
+             size: '10';
 }
 td,th      {background-color:lightgrey}
 table,th,td    {
@@ -27,13 +28,7 @@ th,td{padding: 15px;}
 	<div id="wrap">
 	    <div class="navbar navbar-default navbar-fixed-top" 
 role="navigation">
-		<div class="container">
-		    <div class="navbar-header">
-			    <a class="navbar-brand" href="../CS490/index.php">CS 
-490</a>
-		    </div>
-		    <div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
+                <center><div class="container">
 			    <li class="active">
 				<a 
 href="http://web.njit.edu/~kl293/CS490/teacher.php">Teacher</a>
@@ -55,6 +50,6 @@ href="http://web.njit.edu/~kl293/CS490/studentGrade.php">Grades</a>
 href="http://web.njit.edu/~kl293/CS490/Logout.php">LogOut</a>
 			    </li>
 			</ul>
-		    </div>
+                    </div></center>
 		</div>
 	    </div>

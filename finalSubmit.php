@@ -16,7 +16,7 @@ echo $send;
 
 $var=  json_decode($send);
 
-if($var->{'submit'}=='ok'){
+if($var->{'Submitted'}=='ok'){
     header('Location: quizList.php');
 }else{
     echo "Contact admin for more help";

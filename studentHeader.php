@@ -21,16 +21,10 @@ table,th,td    {
     border-collapse: collapse;}
         </style>
     </head>
-    <body>
-        <div id="wrap">
+    <center><body>
             <div class="navbar navbar-default navbar-fixed-top" 
                  role="navigation">
                 <div class="container">
-                    <div class="navbar-header">
-                        </button>
-                        <a class="navbar-brand" href="../CS490/index.php">CS 
-                            490</a>
-                    </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="active">
@@ -52,8 +46,7 @@ table,th,td    {
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="container">
+            </div></body></center>
 
                 <!--subQuiz-->
                 <?php
