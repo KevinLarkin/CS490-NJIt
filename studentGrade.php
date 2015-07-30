@@ -12,7 +12,7 @@
   curl_setopt($ch, CURLOPT_POSTFIELDS, "cmd=examScores");
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $send = curl_exec($ch);
-  echo $send;
+  //echo $send;
   
   $var = json_decode($send);
   //echo count($var);

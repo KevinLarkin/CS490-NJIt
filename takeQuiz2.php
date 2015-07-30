@@ -7,15 +7,16 @@
 <?php
 
 if($_POST['cmd']=='checkAnswer'){
-    //echo $_POST['Answer'];
+    //echo $_POST['cmd'];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $check_send = curl_exec($ch);
     //echo $check_send;
     $checkAnswer = json_decode($check_send);
+    //echo count($checkAnswer);
 }
 
  $ch = curl_init();
@@ -27,7 +28,7 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userid=".$_SESSION['userId']."&userAnswer=".$userAnswer);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-echo $send;
+//echo $send;
 //echo "this is working";
 
 $var = json_decode($send);
