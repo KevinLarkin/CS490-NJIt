@@ -29,7 +29,10 @@ $var= json_decode($send);
 if($var->{'status'}=='ok'){
     header('Location: createQuiz.php');
 }else{
+    include('header.php');
     echo "Contact admin for more help";
+    echo "<br>";
+    echo $var->{'message'};
 }
 ?>
 

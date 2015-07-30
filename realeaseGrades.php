@@ -7,4 +7,5 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 echo $send;
+header('Location: studenGrade.php')
 ?>

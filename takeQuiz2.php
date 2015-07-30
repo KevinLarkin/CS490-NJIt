@@ -46,7 +46,7 @@ echo $checkAnswerO;
 }*/
 //echo $var->{userAnswer};
 if($var->{type}=='tf'){
-    echo $var->{question};
+    echo "<b>".$var->{question}."</b>";
     //echo "TF";   
     echo "<form method= \"POST\">";
     //if($var->{userAnswer}=='True'){
@@ -74,7 +74,7 @@ if($var->{type}=='tf'){
     echo "</form>";
 }
 if($var->{type}=='mc'){
-    echo $var->{question};
+    echo "<b>".$var->{question}."</b>";
     //echo "MC";
     echo "<form method= \"POST\">";
     //if($var->{userAnswer}=='A'){
@@ -116,7 +116,7 @@ if($var->{type}=='mc'){
     echo "</form>";
 }
 if($var->{type}=='oe'){
-    echo $var->{question};
+    echo "<b>".$var->{question}."</b>";
     //echo "OE";
     echo "<form method= \"POST\">";
     //if($var->{userAnswer}!=''){

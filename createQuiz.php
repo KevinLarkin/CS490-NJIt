@@ -62,7 +62,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 $tests= json_decode($send);
 //Needs to be worked on
-if(count($test)){
+/*if(count($test)){
 echo  "<form <!--action= \"addQuiz.php\"--> method=\"POST\">";
 echo  "<br/>";
 echo  "Pick a Test<br/>";
@@ -83,5 +83,5 @@ echo "</tr>";
 echo "<input name=\"submit\" type=\"submit\" value=\"Submit\" >";
 echo "</form>";}else{
     echo "There are no Tests";
-}
+}*/
         ?>
