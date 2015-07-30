@@ -24,9 +24,9 @@ Password:<br>
 <input type="password" name="password">
 <br><br>
 
-<input name="submit" type="submit" value="Submit"><li>
+<input name="submit" type="submit" value="Submit"><!--<li>
                                 <a href="forgotpass.php">Forgot Password</a>
-                            </li>
+                            </li>-->
 </form>
 <p id ="output"></p>
 </center>
