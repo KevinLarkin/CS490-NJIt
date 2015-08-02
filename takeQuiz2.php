@@ -168,11 +168,11 @@ if($var->{next}!=NULL){
    <input type="button" onclick="finalSubmit()" value="Submit Quiz">
 </form>-->
 <form method="POST">
-   <input type="hidden" value="<?php echo $_GET['examName'];?>"name="examName">
-   <input type="hidden" value="<?php echo $_SESSION["user"];?>"name="user">
-   <input type="hidden" value="<?php echo $_SESSION["userId"];?>"name="userId">
-   <input type="hidden" value="<?php echo $var->{'numberOfAnsweredQuestions'.$i};?>"name="answered">
-   <input type="hidden" value="<?php echo $var->{'numberOfQuestions'.$i};?>"name="total">
+   <input type="hidden" value="<?php echo $_GET['examName'];?>"id="examName">
+   <input type="hidden" value="<?php echo $_SESSION["user"];?>"id="user">
+   <input type="hidden" value="<?php echo $_SESSION["userId"];?>"id="userId">
+   <input type="hidden" value="<?php echo $var->{'numberOfAnsweredQuestions'.$i};?>"id="answered">
+   <input type="hidden" value="<?php echo $var->{'numberOfQuestions'.$i};?>"id="total">
    <input type="hidden" value="submitExam" name="cmd">
    <input type="button" onclick="finalSubmit()" value="Submit Quiz">
 </form>
