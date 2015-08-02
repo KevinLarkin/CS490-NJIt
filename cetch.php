@@ -16,6 +16,8 @@ $var = json_decode($send);
 if($var->{'login'}=="ok"){
     $_SESSION["user"]=$username;
     $_SESSION['userId']=$var->{'userId'};
+    $_SESSION['firstName']=$var->{'firstname'};
+    $_SESSION['lastName']=$var->{'lastname'};
     if($var->{'type'}=="instructor"){
         //echo 'teacher';
         $_SESSION["teacher"]='true';

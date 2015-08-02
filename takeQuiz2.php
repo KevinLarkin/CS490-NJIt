@@ -5,7 +5,6 @@
     include('studentHeader.php');
 ?>
 <?php
-
 if($_POST['cmd']=='checkAnswer'){
     //echo $_POST['cmd'];
     $ch = curl_init();
@@ -18,7 +17,6 @@ if($_POST['cmd']=='checkAnswer'){
     $checkAnswer = json_decode($check_send);
     //echo count($checkAnswer);
 }
-
  $ch = curl_init();
 //$testing = "cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["username"]."&qid=".$_GET["qid"];
 //echo $testing;
@@ -28,14 +26,12 @@ curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userid=".$_SESSION['userId']."&userAnswer=".$userAnswer);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
+echo $send;
 //echo "this is working";
-
 $var = json_decode($send);
 //echo count($var);
 //echo $var->{question};
 //echo $_SESSION['userId'];
-
 /*if($_POST['cmd']=="checkAnswer"){
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
@@ -46,6 +42,20 @@ $checkAnswerO=curl_exec($ch);
 echo $checkAnswerO;
 }*/
 //echo $var->{userAnswer};
+?>
+<center><table border="1">
+  <tr>
+      <th>Answered</th>
+      <th>Total</th>
+  </tr>
+<?php
+    echo "<tr>";
+    echo "<td>".$var->{'numberOfAnsweredQuestions'.$i}."</td>";
+    echo "<td>".$var->{'numberOfQuestions'.$i}."</td>";
+    echo "</tr>";
+?>
+</table></center>
+<?php
 if($var->{type}=='tf'){
     echo "<b>".$var->{question}."</b>";
     //echo "TF";   
@@ -97,7 +107,7 @@ if($var->{type}=='mc'){
         echo "<input type=\"radio\" name=\"Answer\" value=\"C\">".$var->{Opt2}."<br>";
     }
     //if($var->{userAnswer}=='D'){
-    if($checkAnswer->{userAnswer}=='D'){
+    if($checkAnswer->{userAnswer}=='D'||$var->{userAnswer} =='D'){
         echo "<input type=\"radio\" name=\"Answer\" value=\"D\" checked=\"checked\">".$var->{Opt3}."<br>";
     }else{
         echo "<input type=\"radio\" name=\"Answer\" value=\"D\">".$var->{Opt3}."<br>";
@@ -121,10 +131,14 @@ if($var->{type}=='oe'){
     //echo "OE";
     echo "<form method= \"POST\">";
     //if($var->{userAnswer}!=''){
-    if($checkAnswer->{userAnswer}!=''){
+    if($checkAnswer->{userAnswer} != '' && $var->{userAnswer} == ''){
         //echo "<input type=\"text\" name=\"Answer\" value=\"".$var->{'userAnswer'}."\"><br>";
         echo "<input type=\"text\" name=\"Answer\" value=\"".$checkAnswer->{'userAnswer'}."\"><br>";
-    }else{
+    } else if($checkAnswer->{userAnswer} == '' && $var->{userAnswer} != ''){
+        echo "<input type=\"text\" name=\"Answer\" value=\"".$var->{'userAnswer'}."\"><br>";
+    } else if($checkAnswer->{userAnswer} != '' && $var->{userAnswer} != '') {
+        echo "<input type=\"text\" name=\"Answer\" value=\"".$var->{'userAnswer'}."\"><br>"; 
+    } else {
         echo "<input type=\"text\" name=\"Answer\">";
     }
     //echo "<input type=\"text\" name=\"Answer\">";
@@ -143,13 +157,22 @@ if($var->{previous}!=NULL){
 if($var->{next}!=NULL){
     echo "<a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{next}."\"> next </a>";
 }
-
 ?>
-<form action="finalSubmit.php" method="POST">
+<!--<form method="POST">
    <input type="hidden" value="<?php echo $_GET['examName'];?>"name="examName">
    <input type="hidden" value="<?php echo $_SESSION["user"];?>"name="user">
    <input type="hidden" value="<?php echo $_SESSION["userId"];?>"name="userId">
+   <input type="hidden" value="<?php echo $var->{'numberOfAnsweredQuestions'.$i};?>"name="answered">
+   <input type="hidden" value="<?php echo $var->{'numberOfQuestions'.$i};?>"name="total">
    <input type="hidden" value="submitExam" name="cmd">
-   <input type="submit" value="Submit Quiz">
+   <input type="button" onclick="finalSubmit()" value="Submit Quiz">
+</form>-->
+<form method="POST">
+   <input type="hidden" value="<?php echo $_GET['examName'];?>"name="examName">
+   <input type="hidden" value="<?php echo $_SESSION["user"];?>"name="user">
+   <input type="hidden" value="<?php echo $_SESSION["userId"];?>"name="userId">
+   <input type="hidden" value="<?php echo $var->{'numberOfAnsweredQuestions'.$i};?>"name="answered">
+   <input type="hidden" value="<?php echo $var->{'numberOfQuestions'.$i};?>"name="total">
+   <input type="hidden" value="submitExam" name="cmd">
+   <input type="button" onclick="finalSubmit()" value="Submit Quiz">
 </form>
-

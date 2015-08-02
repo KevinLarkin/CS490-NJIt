@@ -9,9 +9,31 @@ th,td {padding:5px;}
 //if {display: inline}
 </style>
 <?php
-
 $dataString = 'cmd=newExam';
 $ch = curl_init();
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt($ch,CURLOPT_POST,true);
+curl_setopt($ch,CURLOPT_POSTFIELDS, "cmd=getExamList");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$testList=curl_exec($ch);
+$tests= json_decode($testList);
+?>
+<center>
+<table><tr>
+        <th>Available Quizzes</th>
+    
+<?php
+for($i=0;$i<count($tests);$i++) {
+    
+    echo "<td><a href=editQuiz.php?examId=\"".$tests[$i]->{'Id'}."\" >".$tests[$i]->{'TestName'}."</a></td>";
+    
+}
+?>
+    </tr>
+</table>
+</center>
+<?php
+/* For new tests */
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
@@ -33,7 +55,7 @@ echo  "<br/>";
 echo  "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
 echo    "<table border=\"1\ class=\"inlineTable\" <!--style=\"float:left-->\">";
 echo    "<tr>";
-echo    "<th>Selcct Question</th>";
+echo    "<th>Select Question</th>";
 echo    "<th>Question</th>" ;
 echo    "<th>Weight</th>";
 echo    "<th>Type</th>";
@@ -52,15 +74,6 @@ echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
 echo "</form></center>";}else{
     echo "There are no Questions to make a Quiz";
 }
-
-$dataString = 'cmd=newExam';
-$ch = curl_init();
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
-curl_setopt($ch,CURLOPT_POST,true);
-curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$send=curl_exec($ch);
-$tests= json_decode($send);
 //Needs to be worked on
 /*if(count($test)){
 echo  "<form <!--action= \"addQuiz.php\"--> method=\"POST\">";
