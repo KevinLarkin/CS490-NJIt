@@ -4,6 +4,7 @@
     if(!isset($_SESSION['student']))header('Location: index.php');
     include('studentHeader.php');
 ?>
+<script src="java.js"></script>
 <?php
 if($_POST['cmd']=='checkAnswer'){
     //echo $_POST['cmd'];
