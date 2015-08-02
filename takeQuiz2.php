@@ -173,6 +173,6 @@ if($var->{next}!=NULL){
    <input type="hidden" value="<?php echo $_SESSION["userId"];?>"id="userId">
    <input type="hidden" value="<?php echo $var->{'numberOfAnsweredQuestions'.$i};?>"id="answered">
    <input type="hidden" value="<?php echo $var->{'numberOfQuestions'.$i};?>"id="total">
-   <input type="hidden" value="submitExam" name="cmd">
+   <input type="hidden" value="submitExam" id="cmd">
    <input type="button" onclick="finalSubmit()" value="Submit Quiz">
 </form>
