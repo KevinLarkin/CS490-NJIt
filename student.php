@@ -5,7 +5,7 @@
     include('studentHeader.php');
 ?>
 <center><div class="alert alert-success">
-		    <h1>Welcome Student<?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?> !!</h1>
+		    <h1>Welcome Student <?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?> !!</h1>
     </div></center>
     </div>
 

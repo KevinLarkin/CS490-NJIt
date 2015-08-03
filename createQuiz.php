@@ -25,7 +25,7 @@ $tests= json_decode($testList);
 <?php
 for($i=0;$i<count($tests);$i++) {
     
-    echo "<td><a href=editQuiz.php?examId=\"".$tests[$i]->{'Id'}."\" >".$tests[$i]->{'TestName'}."</a></td>";
+    echo "<td><a href=editQuiz.php?examId=".$tests[$i]->{'Id'}." >".$tests[$i]->{'TestName'}."</a></td>";
     
 }
 ?>

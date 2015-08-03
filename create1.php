@@ -3,6 +3,9 @@
     session_start();
     if(!isset($_SESSION['teacher']))header("Location: index.php");
     include('thead.php');
+    if (isset($_GET['qid'])){
+        echo "<center>Question ".$_GET['qid']." has been added</center>";
+    }
 ?>
 <center><div class="content-create" id="TF">
 <h1> True or False</h1>
@@ -79,7 +82,7 @@
 <div class="content-create" id="OE">
     
     
-<h1>Open Ended</h1>
+<h1>Fill in the Blank</h1>
 <form action="addQuesOE.php" name="question" method="POST">
 <b>Please type your Question here</b>
 <br/>

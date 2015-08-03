@@ -16,8 +16,13 @@ $send=curl_exec($ch);
 $var = json_decode($send);
 //echo $var->{'message'};
 
-if($var->{'message'}=='ok'){
+/*if($var->{'message'}=='ok'){
     header('Location: create1.php');
+}else{
+    echo "Contact admin for more help";
+}*/
+if($var->{'message'}=='ok'){
+    header('Location: create1.php?qid='.$var->{'qid'});
 }else{
     echo "Contact admin for more help";
 }

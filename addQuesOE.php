@@ -18,7 +18,7 @@ $var = json_decode($send);
 //echo $var->{'message'};
 
 if($var->{'message'}=='ok'){
-    header('Location: create1.php');
+    header('Location: create1.php?qid='.$var->{'qid'});
 }else{
     echo "Contact admin for more help";
 }
