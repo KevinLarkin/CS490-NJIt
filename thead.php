@@ -39,7 +39,7 @@ href="create1.php">Create Quiz Questions</a>
                             </li>
                             <li>
                                 <a 
-href="createQuiz.php">Make Quiz</a>
+href="createQuiz2.php">Make Quiz</a>
                             </li>
 			    <li>
 				<a 
