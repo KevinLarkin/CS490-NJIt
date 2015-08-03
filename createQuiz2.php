@@ -90,6 +90,9 @@ echo "</form>";
     echo "<th>Weight</th>";
     echo "<th>Type</th>";
     echo "</tr>";
+    
+    
+    
     //echo"<tr>";
     //echo "<td><input type=\"checkbox\" name=\"filteredQs\" id=\"filteredQs\" ></td>";
     /*for ($i = 0; $i < count($questions); $i++) {
