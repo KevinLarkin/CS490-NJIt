@@ -15,8 +15,5 @@ if($var->{'message'}=='ok'){
 }else{
     echo "Contact admin for more help";
 }
-
-
-
         ?>
 
