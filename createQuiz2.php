@@ -9,6 +9,7 @@ th,td {padding:5px;}
 //if {display: inline}
 </style>
 <script src="java2.js"></script>
+<body onload="filterb()">
 <?php
 $dataString = 'cmd=newExam';
 $ch = curl_init();
@@ -62,21 +63,22 @@ echo "</form>";
 echo "<hr>";
 /* Filtering */
 echo "<form method=\"POST\">";
-echo "<select name=\"type\">";
-echo "<option value=\"all\">All</option>";
-echo "<option value=\"tf\">True False</option>";
-echo "<option value=\"mc\">Multiple Choice</option>";
-echo "<option value=\"oe\">Open Ended</option>";
+echo "<select id=\"type\" onChange=\"filterb()\">";
+echo "<option>All</option>";
+echo "<option>True False</option>";
+echo "<option>Multiple Choice</option>";
+echo "<option>Fill in the blank</option>";
 echo "<select>";
-echo "<select name=\"weight\">";
-echo "<option value=\"all\">All</option>";
-echo "<option value=\"easy\">Easy</option>";
-echo "<option value=\"medium\">Medium</option>";
-echo "<option value=\"hard\">Hard</option>";
+echo "<select id=\"weight\" onChange=\"filterb()\">";
+echo "<option>All</option>";
+echo "<option>Easy</option>";
+echo "<option>Medium</option>";
+echo "<option>Hard</option>";
 //echo "<option value=\"oe\">Open Ended</option>";
 echo "<select>";
-echo "<input type=\"submit\" onclick=\"filterb()\" value=\"filter\">";
+//echo "<input type=\"button\" onclick=\"filterb()\" value=\"filter\">";
 echo "</form>";
+
 //if (count($questions) > 0) {
     //echo "<center><form action= \"addQuiz.php\" method=\"POST\">";
     //echo "<br/>";
@@ -91,7 +93,7 @@ echo "</form>";
     echo "<th>Weight</th>";
     echo "<th>Type</th>";
     echo "</tr>";
-    
+    echo "<tbody id=\"qList\"></tbody>";
     
     
     //echo"<tr>";
