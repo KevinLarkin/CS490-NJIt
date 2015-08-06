@@ -7,12 +7,4 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send = curl_exec($ch);
 echo $send;
 $var=  json_decode($send);
-/*
-if($var->{'message'}=='ok'){
-    header('Location: quizList.php');
-}else{
-    echo "Contact admin for more help";
-}
- * 
- */
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 $post = array();
 $qid = array();
 for ($i = 0; $i < count($_POST['qid']); $i++) {

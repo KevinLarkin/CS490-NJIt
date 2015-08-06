@@ -11,20 +11,9 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=getFeedback&userId=".$_SESSION['userId']."&exam=".$_GET["exam"]);
 curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
-//echo $send;
 $feedback = json_decode($send);
-
-/*
-echo $feedback->{'ExamName'};
-echo "<br>";
-echo $feedback->{'NumberOfQuestions'};
-echo "<br>";
- * 
- */
- 
 ?>
 <center><h1>Feedback for <?php echo $_GET['exam']." - ".$_GET['score']."" ;?></h1>
-           
 <table border="1">
   <tr>
       <th>Question</th>
@@ -40,11 +29,7 @@ for($i=0;$i<$feedback->{'NumberOfQuestions'};$i++) {
     echo "<td>".$feedback->{'question'.$i}."</td>";
     echo "<td>".$feedback->{'youranswer'.$i}."</td>";
     echo "<td>".$feedback->{'answer'.$i}."</td>";
-    //echo "<td>".$feedback->{'qtype'.$i}."</td>";
     echo "<td>".$feedback->{'qstatus'.$i}."</td>";
-    //echo "<td>".$feedback->{'youranswer'.$i}."</td>";
-    //echo "<td>".$feedback->{'answer'.$i}."</td>";
-    //echo "<td>".$feedback->{'youranswer'.$i}."</td>";
     echo "<td>".$feedback->{'qtype'.$i}."</td>";
     echo "<td>".$feedback->{'qweight'.$i}."</td>";
     echo "</tr>";
