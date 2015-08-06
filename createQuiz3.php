@@ -9,11 +9,11 @@ th,td {padding:5px;}
 //if {display: inline}
 </style>
 <script src="java2.js"></script>
-<body onload="filterb()">
+ <body onload="filterb()">
 <?php
 $dataString = 'cmd=newExam';
 $ch = curl_init();
-curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS, "cmd=getExamList");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,33 +34,30 @@ for($i=0;$i<count($tests);$i++) {
     </tr>
 </table>
 </center>
-<p id='output' ></p>
 <?php
 /* For new tests */
-/*curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 //echo $send;
 //echo count($send);
-$questions= json_decode($send);*/
+$questions= json_decode($send);
 //echo count($questions);
 //echo $questions->{'message'};
 //echo $questions;
 //echo $questions->{type};
 //echo "<p id=\"newExam\">test</p>";
 //echo "<input type=\"button\" onInput=\"addToQuiz()\" value=\"test\">";
-//echo "<form method=\"POST\">";
 echo "<hr>";
 echo "<center>";
-echo "<table border=\"1\">";
-echo "<tr><td><form action= \"addQuiz.php\" id=\"newExamForm\" method=\"POST\">";
+echo "<form action= \"addQuiz.php\" id=\"newExamForm\" method=\"POST\">";
 echo "Insert Exam Name Here<br/>";
 echo "<input type=\"text\" name=\"ExamName\">";
 echo "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
 echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
-echo "</form></td></tr></table>";
+echo "</form>";
 //echo "</center>";
 echo "<hr>";
 /* Filtering */
@@ -80,7 +77,6 @@ echo "<option>Hard</option>";
 echo "<select>";
 //echo "<input type=\"button\" onclick=\"filterb()\" value=\"filter\">";
 echo "</form>";
-
 //if (count($questions) > 0) {
     //echo "<center><form action= \"addQuiz.php\" method=\"POST\">";
     //echo "<br/>";
@@ -89,6 +85,7 @@ echo "</form>";
     //echo "<br/>";
     //echo "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
     echo "<table border=\"1\" class=\"inlineTable\" id=\"questionList\">";
+    
     echo "<tr>";
     echo "<th>Select Question</th>";
     echo "<th>Question</th>";
@@ -111,7 +108,7 @@ echo "</form>";
         echo "</tr>";
     }*/
     echo"</table>";
-    //echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
+    echo "<input name=\"submit\" type=\"button\" value=\"button\" onclick=\"addToQuiz()\">";
     echo "</form></center>";
     /*
 } else {

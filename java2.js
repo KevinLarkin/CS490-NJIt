@@ -54,44 +54,32 @@ function finalSubmit() {
     }
 }
 
-function addToQuiz() {
-    var qidList = document.getElementsByName("qid");
+function addToQuiz(x) {
+    //var qidList = document.getElementsByName("qid");
     //var qid = document.getElementById("qid_").value;
     var form = document.getElementById('newExamForm');
-    for (var i = 0, length = qidList.length; i < length; i++) {
-        if(qidList[i].checked) {
-	    var qid = qidList[i].value;
-	}
-        //form.insertAdjacentHTML('afterbegin','<input type="checkbox" name="qid[]" value="'+ qid +'" checked>'+ qid +'<br>');
-    }
+    /*var qid = Array();
+     for (var i = 0, length = qidList.length; i < length; i++) {
+     if(qidList[i].checked) {
+     //var qid = qidList[i].value;
+     qid.push(qidList[i].value);
+     }
+     //form.insertAdjacentHTML('afterbegin','<input type="checkbox" name="qid[]" value="'+ qid +'" checked>'+ qid +'<br>');
+     }*/
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST","getQuestion.php",true);
-    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp.send("cmd=getQuestion&qid="+qid);
-    xmlhttp.onreadystatechange=function(){
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            form.insertAdjacentHTML('afterbegin','<input type="checkbox" name="qid[]" value="'+ qid +'" checked>'+ xmlhttp.responseText +'<br>');
+    xmlhttp.open("POST", "getQuestion.php", true); 
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //xmlhttp.send("cmd=getQuestion&qid="+qid);
+    xmlhttp.send("cmd=getQuestion&qid=" + x);
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //for(var i = 0, length = qid.length; i < length; i++){
+            form.insertAdjacentHTML('afterbegin', '<input type="checkbox" name="qid[]" value="' + x + '" checked>' + xmlhttp.responseText + '<br>');
+            //}
         }
     }
-    }
-    
-    //form.insertAdjacentHTML('afterbegin','test<br>');
-    //form.insertAdjacentHTML('afterbegin','<input type="checkbox" name="qid[]" value="'+ qid +'" checked>'+ qid +'<br>');
-//document.getElementById("newExam").appendChild=qid;
-/*
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            document.getElementById("newExam").innerHTML=xmlhttp.responseText;
-        }
-    }
-    xmlhttp.open("POST","cetch.php",true);
-    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp.send("username="+username+"&password="+password);
-    */
-   
+}
+
    function filterb() {
     var type = document.getElementById("type").value;
     var weight = document.getElementById('weight').value;
@@ -119,7 +107,8 @@ function addToQuiz() {
 
             for(i = 0, length = obj.length;i < length; i++) {
                 //output = i;
-                output += "<tr><td><input type=\"checkbox\" onClick=\"addToQuiz()\" name=\"qid\" id=\"qid\" value=\""+obj[i].qid+"\"></td><td>"+obj[i].question+"</td><td>"+obj[i].weight+"</td><td>"+obj[i].type+"</td></tr>";
+                //output += "<tr><td><input type=\"checkbox\" onClick=\"addToQuiz()\" name=\"qid\" id=\"qid\" value=\""+obj[i].qid+"\"></td><td>"+obj[i].question+"</td><td>"+obj[i].weight+"</td><td>"+obj[i].type+"</td></tr>";
+                output += "<tr><td><input type=\"checkbox\" onchange=\"addToQuiz("+obj[i].qid+")\" name=\"qid\" id=\"qid\" value=\""+obj[i].qid+"\"></td><td>"+obj[i].question+"</td><td>"+obj[i].weight+"</td><td>"+obj[i].type+"</td></tr>";
             }
             
         //obj = JSON.parse(xmlhttp.responseText);
