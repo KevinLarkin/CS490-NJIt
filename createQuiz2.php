@@ -33,6 +33,7 @@ for($i=0;$i<count($tests);$i++) {
     </tr>
 </table>
 </center>
+<p id='output' ></p>
 <?php
 /* For new tests */
 curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");

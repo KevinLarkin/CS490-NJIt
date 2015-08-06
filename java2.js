@@ -73,6 +73,7 @@ function addToQuiz() {
             form.insertAdjacentHTML('afterbegin','<input type="checkbox" name="qid[]" value="'+ qid +'" checked>'+ xmlhttp.responseText +'<br>');
         }
     }
+    }
     
     //form.insertAdjacentHTML('afterbegin','test<br>');
     //form.insertAdjacentHTML('afterbegin','<input type="checkbox" name="qid[]" value="'+ qid +'" checked>'+ qid +'<br>');
@@ -95,8 +96,10 @@ function addToQuiz() {
         var type = document.getElementsById("type").value;
         var weight = document.getElementById('weight').value;
         var table = document.getElementById('questionList');
-        //table.insertAdjacentHTML('beforeend',"<tr><td> testing</td></tr>");
-        document.getElementById("questionList").innerHTML="text";
+        //alert("help does this work");
+        //table.insertAdjacentHTML("beforeend","<tr><td> testing</td></tr>");
+        document.getElementById("output").innerHTML="text";
+        
         /*for (var i = 0, length = qidList.length; i < length; i++) {
             if (qidList[i].checked) {
                 var qid = qidList[i].value;
@@ -109,6 +112,6 @@ function addToQuiz() {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 form.insertAdjacentHTML('afterbegin', '<input type="checkbox" name="qid[]" value="' + qid + '" checked>' + xmlhttp.responseText + '<br>');
-            }*/
-        }
+            }
+        }*/
     }
