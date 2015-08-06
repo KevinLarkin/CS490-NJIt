@@ -21,7 +21,7 @@ if($_POST['cmd']=='checkAnswer'){
  $ch = curl_init();
 //$testing = "cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["username"]."&qid=".$_GET["qid"];
 //echo $testing;
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 //curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]."&userid=".$_SESSION['userId']."&userAnswer=".$userAnswer);
@@ -56,6 +56,10 @@ echo $checkAnswerO;
     echo "</tr>";
 ?>
 </table></center>
+
+<table>
+    <tr>
+        <td>
 <?php
 if($var->{type}=='tf'){
     echo "<b>".$var->{question}."</b>";
@@ -153,12 +157,16 @@ if($var->{type}=='oe'){
     echo "</form>";
 }
 if($var->{previous}!=NULL){
-    echo "<a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{previous}."\"> previous </a>";
+    echo " <a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{previous}."\"> previous";
 }
 if($var->{next}!=NULL){
-    echo "<a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{next}."\"> next </a>";
+    echo "<a href=\"takeQuiz2.php?examName=".$_GET["examName"]."&qid=".$var->{next}."\"> next </a> ";
 }
 ?>
+        </td>
+    </tr>
+</table>
+
 <!--<form method="POST">
    <input type="hidden" value="<?php //echo $_GET['examName'];?>"name="examName">
    <input type="hidden" value="<?php //echo $_SESSION["user"];?>"name="user">

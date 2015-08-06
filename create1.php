@@ -12,7 +12,8 @@
 <form action="addQuesTF.php" name="myform" method="POST">
     <b> Please type your question in the test box below</b>
     <br />
-    <textarea id= "TF" name ="Question" style="width:400px;height:95px;"></textarea>
+    <!--<textarea id= "TF" name ="Question" style="width:400px;height:95px;"></textarea>-->
+    <input type="text" size="75" id= "TF" name ="Question">
 <br />
 <br />
     <b>Please select whether true or false is the correct answer</b>
@@ -44,7 +45,8 @@
 <form action="addQuesMC.php" name="question" method="POST">
     <b> Please insert new Question here</b>
     <br />
-<textarea id="MCQ" name="Question" style="width:400px;height:95px;"></textarea>
+<!--<textarea id="MCQ" name="Question" style="width:400px;height:95px;"></textarea>-->
+    <input type="text" id="MCQ" name="Question" size="75">
 <br />                    <br />
 <b>Please create first answer here</b>
 <br />
@@ -86,11 +88,13 @@
 <form action="addQuesOE.php" name="question" method="POST">
 <b>Please type your Question here</b>
 <br/>
-<textarea id="OE" name="Question" style="width:400px;height:95px;"></textarea>
+<!--<textarea id="OE" name="Question" style="width:400px;height:95px;"></textarea>-->
+<input type="text" id="OE" name="Question" size="75">
 <br/>
  <b>Please type the Answer here</b>
  <br />		
- <textarea id="OEA" name="Answer" style="width:400px; min-height: 100px; max-height: none;"></textarea>
+ <!--<textarea id="OEA" name="Answer" style="width:400px; min-height: 100px; max-height: none;"></textarea>-->
+ <input type="text" id="OEA" name="Answer">
  <br /><input type="radio" name="diff" value="Easy">Easy
             <input type="radio" name="diff" value="medium">Medium
             <input type="radio" name="diff" value="hard">Hard

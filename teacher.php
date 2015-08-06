@@ -5,7 +5,8 @@
     include('thead.php');
 ?>
 <center><div class="alert alert-success">
-		    <h2>Welcome Professor <?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?> !!</h2>
+		    <h2>Welcome Professor <?php echo $_SESSION['firstName']." ".$_SESSION['lastName']; ?> !!
+                    <img src="media/python-logo.png">
     </div></center>
     </div>
 

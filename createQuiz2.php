@@ -8,7 +8,7 @@
 th,td {padding:5px;}
 //if {display: inline}
 </style>
-<script src="java2.js"></script>
+<script src="java.js"></script>
 <body onload="filterb()">
 <?php
 $dataString = 'cmd=newExam';
@@ -27,7 +27,7 @@ $tests= json_decode($testList);
 <?php
 for($i=0;$i<count($tests);$i++) {
     
-    echo "<td><a href=editQuiz.php?examId=".$tests[$i]->{'Id'}." >".$tests[$i]->{'TestName'}."</a></td>";
+    echo "<td><a href=quizInfo.php?examId=".$tests[$i]->{'Id'}." >".$tests[$i]->{'TestName'}."</a></td>";
     
 }
 ?>
@@ -36,41 +36,30 @@ for($i=0;$i<count($tests);$i++) {
 </center>
 <p id='output' ></p>
 <?php
-/* For new tests */
-/*curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
-curl_setopt($ch,CURLOPT_POST,true);
-curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$send=curl_exec($ch);
-//echo $send;
-//echo count($send);
-$questions= json_decode($send);*/
-//echo count($questions);
-//echo $questions->{'message'};
-//echo $questions;
-//echo $questions->{type};
-//echo "<p id=\"newExam\">test</p>";
-//echo "<input type=\"button\" onInput=\"addToQuiz()\" value=\"test\">";
-//echo "<form method=\"POST\">";
 echo "<hr>";
 echo "<center>";
+echo "<h1>New Quiz</h1>";
 echo "<table border=\"1\">";
 echo "<tr><td><form action= \"addQuiz.php\" id=\"newExamForm\" method=\"POST\">";
 echo "Insert Exam Name Here<br/>";
 echo "<input type=\"text\" name=\"ExamName\">";
 echo "<input type=\"hidden\" name=\"cmd\" value=\"createExam\">";
-echo "<input name=\"submit\" type=\"submit\" value=\"Submit\">";
+echo "<input name=\"submit\" type=\"submit\" value=\"Create Quiz\">";
 echo "</form></td></tr></table>";
 //echo "</center>";
 echo "<hr>";
+echo "<h1>Available Questions</h1>";
 /* Filtering */
+echo "<table><th>Filter by: </th><tr><td>";
 echo "<form method=\"POST\">";
+echo "<label> Type  </label>";
 echo "<select id=\"type\" onChange=\"filterb()\">";
 echo "<option>All</option>";
 echo "<option>True False</option>";
 echo "<option>Multiple Choice</option>";
 echo "<option>Fill in the blank</option>";
 echo "<select>";
+echo "<label> Weight </label>";
 echo "<select id=\"weight\" onChange=\"filterb()\">";
 echo "<option>All</option>";
 echo "<option>Easy</option>";
@@ -80,7 +69,7 @@ echo "<option>Hard</option>";
 echo "<select>";
 //echo "<input type=\"button\" onclick=\"filterb()\" value=\"filter\">";
 echo "</form>";
-
+echo "</table></tr></td>";
 //if (count($questions) > 0) {
     //echo "<center><form action= \"addQuiz.php\" method=\"POST\">";
     //echo "<br/>";

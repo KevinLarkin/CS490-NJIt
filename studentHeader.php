@@ -25,7 +25,9 @@ question{
 }  
         </style>
     </head>
-    <center><body>
+   <body>
+            <img src="media/head.png" style="width:50px;height:50px;"> 
+                <center>
             <div class="navbar navbar-default navbar-fixed-top" 
                  role="navigation">
                 <div class="container">
@@ -50,4 +52,5 @@ question{
                         </ul>
                     </div>
                 </div>
-            </div></body></center>
+            </div></center>
+    <hr>

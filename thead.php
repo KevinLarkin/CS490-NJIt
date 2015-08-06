@@ -25,6 +25,7 @@ th,td{padding: 15px;}
 </style>
         </head>
     <body>
+        <img src="media/head.png" style="width:50px;height:50px;">
 	<div id="wrap">
 	    <div class="navbar navbar-default navbar-fixed-top" 
 role="navigation">
@@ -53,3 +54,5 @@ href="Logout.php">LogOut</a>
                     </div></center>
 		</div>
 	    </div>
+            
+            <hr>

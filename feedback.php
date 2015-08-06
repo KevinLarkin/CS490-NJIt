@@ -13,6 +13,7 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 $send=curl_exec($ch);
 //echo $send;
 $feedback = json_decode($send);
+
 /*
 echo $feedback->{'ExamName'};
 echo "<br>";
@@ -20,8 +21,9 @@ echo $feedback->{'NumberOfQuestions'};
 echo "<br>";
  * 
  */
+ 
 ?>
-<center><h1>Feedback for <?php echo $_GET['exam'].$_GET['score']?></h1>
+<center><h1>Feedback for <?php echo $_GET['exam']." - ".$_GET['score']."" ;?></h1>
            
 <table border="1">
   <tr>
