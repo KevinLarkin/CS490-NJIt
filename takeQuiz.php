@@ -8,7 +8,7 @@
  $ch = curl_init();
 $testing = "cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["username"]."&qid=".$_GET["qid"];
 //echo $testing;
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 //curl_setopt($ch,CURLOPT_POSTFIELDS,$_POST);
 curl_setopt($ch,CURLOPT_POSTFIELDS,"cmd=takeExam&examName=".$_GET["examName"]."&username=".$_SESSION["user"]."&qid=".$_GET["qid"]);
@@ -70,7 +70,7 @@ if($var->{next}!=NULL){
 if($_POST['cmd']=='checkAnswer'){
     //echo $_POST['Answer'];
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://afsaccess2.njit.edu/~ls339/cs490/middle/beta/proc.php");
+    curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $_POST);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

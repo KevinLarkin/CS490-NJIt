@@ -17,7 +17,7 @@ echo $_POST['qid'][0];
 echo $_POST['qid'][1];*/
 //$qid ="qid[]";
 //$add ="cmd=createExam&ExamName=".$_POST['ExamName']."&qid=".$_POST['qid'];
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$post);
 //curl_setopt($ch,CURLOPT_HTTPHEADER,array("Content-type: multipart/form-data"));

@@ -11,7 +11,7 @@ th,td {padding:5px;}
 <?php
 $dataString = 'cmd=newExam';
 $ch = curl_init();
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS, "cmd=getExamList");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,7 +34,7 @@ for($i=0;$i<count($tests);$i++) {
 </center>
 <?php
 /* For new tests */
-curl_setopt( $ch,CURLOPT_URL,"http://afsaccess2.njit.edu/~ls339/cs490/middle/proc.php");
+curl_setopt( $ch,CURLOPT_URL,"https://web.njit.edu/~ls339/cs490/middle/proc.php");
 curl_setopt($ch,CURLOPT_POST,true);
 curl_setopt($ch,CURLOPT_POSTFIELDS,$dataString);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
